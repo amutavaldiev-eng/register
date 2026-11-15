@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Task</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<div class="navbr">
+    <h2>Task Manager</h2>
+    <div class="menu">
+        <a href="/profile">Profile</a>
+        <a href="/show_task">My Tasks</a>
+    </div>
+</div>
+<div class="conte">
+    <div class="boxs">
+        <h2>Update Task</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form">
+                <label>Title</label>
+                <input type="text" name="title"value="{{task.title}}" required>
+            </div>
+            <div class="form">
+                <label>Caption</label>
+                <textarea name="caption" required>{{task.caption}}</textarea>
+            </div>
+            <div class="form">
+                <button type="submit">Update</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

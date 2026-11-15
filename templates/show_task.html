@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Tasks</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<div class="navbr">
+    <h2>Task Manager</h2>
+    <a href="/profile">Profile</a>
+    <a href="/logout">Logout</a>
+</div>
+<div class="conte">
+    <h2>My Tasks</h2>
+    <a href="/create_task">Add Task</a>
+    <form method="GET">
+        <input type="text" name="q" placeholder="Search..." value="{{query}}">
+        <button type="submit">Search</button>
+    </form>
+    {% for task in tasks %}
+        <div class="cards">
+            <h3>{{task.title}}</h3>
+            <p>{{task.caption}}</p>
+            <p>{{task.created_at}}</p>
+            <a href="/update_task/{{task.id}}/">Update</a>
+            <a href="/delete_task/{{task.id}}/">Delete</a>
+        
+            </form>
+        </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

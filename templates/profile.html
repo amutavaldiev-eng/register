@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<div class="navbr">
+    <div class="logo">
+        <h2>Task Manager</h2>
+    </div>
+    <div class="menu">
+        <a href="/profile">Profile</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+<div class="conte">
+    <div class="prof">
+        <h1>Hello, {{request.user.username}}</h1>
+        <p>Welcome to your Task Manager!</p>
+        <div class="acts">
+            <a href="/create_task">Create Task</a>
+            <a href="/show_task">My Tasks</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
